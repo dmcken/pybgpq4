@@ -1,0 +1,38 @@
+[build-system]
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+# Can be removed once the GIT dependencies are gone.
+# allow-direct-references = true
+
+[tool.hatch.version]
+path = "src/pybgpq4/__init__.py"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name    = "pybgpq4"
+dynamic = ["version"]
+authors = [
+  { name="David Mc Ken", email="david.mcken@codepro.guru" },
+]
+description="Py BGP query"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+]
+dependencies = [
+    "python-dotenv",
+]
+
+[project.urls]
+Homepage = "https://github.com/dmcken/pybgpq4"
+Issues   = "https://github.com/dmcken/pybgpq4/issues"
+
+[project.scripts]
+pybgpq4    = "pybgpq4.cli:main"
